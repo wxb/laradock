@@ -255,6 +255,20 @@ RUN if [ ${INSTALL_SOAP} = true ]; then \
   apt-get -y install libxml2-dev php${LARADOCK_PHP_VERSION}-soap \
 ;fi
 
+
+###########################################################################
+# XMLRPC:
+###########################################################################
+
+USER root
+
+ARG INSTALL_XMLRPC=false
+
+RUN if [ ${INSTALL_XMLRPC} = true ]; then \
+  # Install the PHP xmlrpc extension
+  apt-get -y install libxml2-dev php${LARADOCK_PHP_VERSION}-xmlrpc \
+  ;fi
+
 ###########################################################################
 # XSL:
 ###########################################################################
